@@ -4,7 +4,7 @@ import router from "./router";
 import store from "./store";
 import VuexASR from "vuex-asr";
 import "./registerServiceWorker";
-import vuetify from "./plugins/vuetify";
+// import vuetify from "./plugins/vuetify";
 
 Vue.use(VuexASR);
 Vue.config.productionTip = false;
@@ -31,6 +31,5 @@ files.keys().map(key =>
 new Vue({
   router,
   store,
-  vuetify,
   render: h => h(App)
 }).$mount("#app");
