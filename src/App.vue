@@ -1,13 +1,18 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/todo-mvc">TodoMVC</router-link>
-    </div>
-    <router-view />
+  <div class="todoapp">
+    <header class="header">
+      <h1>todos</h1>
+    </header>
+    <new-todo asr-bind-state="newTodo" asr-bind-actions="addTodo" />
+    <list-todos
+      asr-bind-getters="todos"
+      asr-bind-mutations="removeTodo"
+      asr-debug
+    />
+    <todo-footer asr-bind-getters="todosActive" />
   </div>
 </template>
 
 <style lang="scss">
-  @import '../src/style.css';
+@import "../src/style.css";
 </style>
