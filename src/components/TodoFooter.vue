@@ -1,8 +1,8 @@
 <template>
   <footer class="footer" style>
     <span class="todo-count">
-      <strong>1</strong>
-      item left
+      <strong>{{ todosActive.length }}</strong>
+      items left
     </span>
     <ul class="filters">
       <li>

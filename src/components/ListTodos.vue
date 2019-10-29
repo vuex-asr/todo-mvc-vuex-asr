@@ -1,10 +1,12 @@
 <template>
   <div class="main">
-    <div v-for="item in todos" :key="item.id">
-      {{ item.title }}
-      <v-btn text icon color="pink">
-        <v-icon @click="removeTodo(item)">mdi-delete</v-icon>
-      </v-btn>
-    </div>
+    <ul class="todo-list">
+      <todo
+        v-for="todo in todos"
+        :key="todo.id"
+        :todo="todo"
+        asr-bind-mutations="editTodo, toggleTodo, deleteTodo"
+      ></todo>
+    </ul>
   </div>
 </template>
