@@ -17,7 +17,9 @@ export default new Vuex.Store({
         text: "this one is active",
         done: false
       }
-    ]
+    ],
+    visibility: "all",
+    filters: ["all", "active", "completed"]
   },
   getters: {
     todos: state => {
@@ -32,6 +34,22 @@ export default new Vuex.Store({
       return state.todos.filter(item => {
         return item.done === true;
       });
+    },
+    todosSelected: (state, getters) => {
+
+      let todosSelected = state.todos;
+      console.log("state.visibility", state.visibility);
+
+      switch (state.visibility) {
+        case "active":
+          todosSelected = getters.todosActive;
+          break;
+        case "completed":
+          todosSelected = getters.todosDone;
+          break;
+      }
+
+      return todosSelected;
     },
     newId: state => {
       let max = 0;
@@ -54,6 +72,9 @@ export default new Vuex.Store({
       state.todos = state.todos.filter(todo => {
         return todo.id !== item.id;
       });
+    },
+    changeVisibility: (state, key) => {
+      state.visibility = key;
     },
     initializeNewTodo(state) {
       state.newTodo = {};
@@ -90,6 +111,32 @@ export default new Vuex.Store({
 
       commit("pushTodoToTodos", mappedItem);
       commit("initializeNewTodo");
-    }
+    },
+    // doneEdit({ commit }, {e, todo}) {
+    //   console.log("e", e);
+    //   console.log("todo", todo);
+    //
+    //
+    //   const value = e.target.value.trim();
+    //   // const { todo } = this;
+    //   if (!value) {
+    //     commit("deleteTodo",{
+    //       todo
+    //     });
+    //   } else if (this.editing) {
+    //     commit("editTodo", {
+    //       todo,
+    //       value
+    //     });
+    //
+    //     // Resolve in state;
+    //
+    //     //this.editing = false;
+    //   }
+    // },
+    // cancelEdit({}, {e, todo}) {
+    //   e.target.value = todo.text;
+    //   // this.editing = false;
+    // },
   }
 });

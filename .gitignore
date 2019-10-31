@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /dist
-
+/src/plugins/vuex-asr
 /tests/e2e/reports/
 selenium-debug.log
 chromedriver.log

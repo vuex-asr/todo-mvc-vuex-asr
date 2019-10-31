@@ -2,7 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import VuexASR from "vuex-asr";
+import VuexASR from "./plugins/vuex-asr/src/vuex-asr";
 import "./registerServiceWorker";
 // import vuetify from "./plugins/vuetify";
 

@@ -3,16 +3,25 @@
     <header class="header">
       <h1>todos</h1>
     </header>
-    <new-todo asr-bind-state="newTodo" asr-bind-actions="addTodo" />
-    <list-todos
-      asr-bind-getters="todos"
-      asr-bind-mutations="removeTodo"
-      asr-debug
+    <new-todo
+            asr-bind-state="newTodo"
+            asr-bind-actions="addTodo"
     />
-    <todo-footer asr-bind-getters="todosActive" />
+    <list-todos
+            asr-bind-state="visibility"
+            asr-bind-getters="todosSelected"
+            asr-bind-mutations="removeTodo"
+            asr-debug
+    />
+    <todo-footer
+            asr-bind-state="visibility, filters"
+            asr-bind-getters="todosActive"
+            asr-bind-mutations="changeVisibility"
+            asr-debug
+    />
   </div>
 </template>
 
 <style lang="scss">
-@import "../src/style.css";
+  @import '../src/style.css';
 </style>
