@@ -5,7 +5,9 @@
         v-for="todo in todosSelected"
         :key="todo.id"
         :todo="todo"
-        asr-bind-mutations="editTodo, toggleTodo, deleteTodo"
+        :editTodo="editTodo"
+        :toggleTodo="toggleTodo"
+        :deleteTodo="deleteTodo"
       ></todo>
     </ul>
   </div>

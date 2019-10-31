@@ -8,9 +8,8 @@
             asr-bind-actions="addTodo"
     />
     <list-todos
-            asr-bind-state="visibility"
             asr-bind-getters="todosSelected"
-            asr-bind-mutations="removeTodo"
+            asr-bind-mutations="removeTodo, editTodo, toggleTodo, deleteTodo"
             asr-debug
     />
     <todo-footer

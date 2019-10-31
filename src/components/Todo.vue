@@ -24,8 +24,7 @@
 
 <script>
 export default {
-  name: "Todo",
-  props: ["todo"],
+  props: ["todo", "editTodo", "toggleTodo", "deleteTodo"],
   data() {
     return {
       editing: false
