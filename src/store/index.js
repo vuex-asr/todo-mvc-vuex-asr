@@ -112,31 +112,5 @@ export default new Vuex.Store({
       commit("pushTodoToTodos", mappedItem);
       commit("initializeNewTodo");
     },
-    // doneEdit({ commit }, {e, todo}) {
-    //   console.log("e", e);
-    //   console.log("todo", todo);
-    //
-    //
-    //   const value = e.target.value.trim();
-    //   // const { todo } = this;
-    //   if (!value) {
-    //     commit("deleteTodo",{
-    //       todo
-    //     });
-    //   } else if (this.editing) {
-    //     commit("editTodo", {
-    //       todo,
-    //       value
-    //     });
-    //
-    //     // Resolve in state;
-    //
-    //     //this.editing = false;
-    //   }
-    // },
-    // cancelEdit({}, {e, todo}) {
-    //   e.target.value = todo.text;
-    //   // this.editing = false;
-    // },
   }
 });
