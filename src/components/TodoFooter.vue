@@ -1,20 +1,28 @@
 <template>
-  <footer class="footer" style>
+  <footer
+    class="footer"
+    style
+  >
     <span class="todo-count">
       <strong>{{ todosActive.length }}</strong>
       items left
     </span>
     <ul class="filters">
-      <li :key="key" v-for="key in filters">
+      <li
+        :key="key"
+        v-for="key in filters"
+      >
         <a
           :href="'#/' + key"
           :class="{ selected: visibility === key }"
           @click="changeVisibility(key)"
-          >{{ key | capitalize }}</a
-        >
+        >{{ key | capitalize }}</a>
       </li>
     </ul>
-    <button class="clear-completed" style="display: none;">
+    <button
+      class="clear-completed"
+      style="display: none;"
+    >
       Clear completed
     </button>
   </footer>

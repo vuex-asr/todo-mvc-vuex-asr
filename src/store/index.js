@@ -36,7 +36,6 @@ export default new Vuex.Store({
       });
     },
     todosSelected: (state, getters) => {
-
       let todosSelected = state.todos;
       console.log("state.visibility", state.visibility);
 
@@ -111,6 +110,6 @@ export default new Vuex.Store({
 
       commit("pushTodoToTodos", mappedItem);
       commit("initializeNewTodo");
-    },
+    }
   }
 });

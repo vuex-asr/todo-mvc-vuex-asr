@@ -2,13 +2,13 @@
   <div class="main">
     <ul class="todo-list">
       <todo
-        v-for="todo in todosSelected"
+        v-for="todo in todos"
         :key="todo.id"
         :todo="todo"
-        :editTodo="editTodo"
-        :toggleTodo="toggleTodo"
-        :deleteTodo="deleteTodo"
-      ></todo>
+        :edit-todo="editTodo"
+        :toggle-todo="toggleTodo"
+        :delete-todo="deleteTodo"
+      />
     </ul>
   </div>
 </template>

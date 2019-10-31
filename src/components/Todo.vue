@@ -1,14 +1,23 @@
 <template>
-  <li class="todo" :class="{ completed: todo.done, editing: editing }">
+  <li
+    class="todo"
+    :class="{ completed: todo.done, editing: editing }"
+  >
     <div class="view">
       <input
         class="toggle"
         type="checkbox"
         :checked="todo.done"
         @change="toggleTodo({ todo: todo })"
+      >
+      <label
+        v-text="todo.text"
+        @dblclick="editing = true"
       />
-      <label v-text="todo.text" @dblclick="editing = true"></label>
-      <button class="destroy" @click="deleteTodo({ todo: todo })"></button>
+      <button
+        class="destroy"
+        @click="deleteTodo({ todo: todo })"
+      />
     </div>
     <input
       class="edit"
@@ -18,7 +27,7 @@
       @keyup.enter="doneEdit"
       @keyup.esc="cancelEdit"
       @blur="doneEdit"
-    />
+    >
   </li>
 </template>
 
