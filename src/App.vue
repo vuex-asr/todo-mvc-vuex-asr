@@ -4,18 +4,22 @@
       <h1>todos</h1>
     </header>
     <new-todo
-      asr-bind-state="newTodo"
-      asr-bind-actions="addTodo"
+      asr-bind-state="Todos/newTodo"
+      asr-bind-actions="Todos/addTodo"
     />
     <list-todos
-      asr-bind-getters="todosSelected AS todos"
-      asr-bind-mutations="removeTodo, editTodo, toggleTodo, deleteTodo"
+      asr-bind-getters="Todos/todosSelected AS todos"
+      asr-bind-mutations="
+        Todos/removeTodo,
+        Todos/editTodo,
+        Todos/toggleTodo,
+        Todos/deleteTodo"
       asr-debug
     />
     <todo-footer
-      asr-bind-state="visibility, filters"
-      asr-bind-getters="todosActive"
-      asr-bind-mutations="changeVisibility"
+      asr-bind-state="Todos/visibility, Todos/filters"
+      asr-bind-getters="Todos/todosActive"
+      asr-bind-mutations="Todos/changeVisibility"
       asr-debug
     />
   </div>
